@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react'
 import { ModalProvider } from '@pancakeswap/uikit'
 import { Web3ReactProvider } from '@web3-react/core'
@@ -11,6 +12,7 @@ import { ToastsProvider } from 'contexts/ToastsContext'
 import store from 'state'
 
 const Providers: React.FC = ({ children }) => {
+  console.log(store, "the store")
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <Provider store={store}>

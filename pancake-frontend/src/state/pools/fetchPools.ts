@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import BigNumber from 'bignumber.js'
 import poolsConfig from 'config/constants/pools'
 import sousChefABI from 'config/abi/sousChef.json'
@@ -58,7 +59,7 @@ export const fetchPoolsTotalStaking = async () => {
   })
 
   const nonBnbPoolsTotalStaked = await multicall(cakeABI, callsNonBnbPools)
-  const bnbPoolsTotalStaked = await multicall(wbnbABI, callsBnbPools)
+  const bnbPoolsTotalStaked = await multicall(wbnbABI as any, callsBnbPools)
 
   return [
     ...nonBnbPools.map((p, index) => ({

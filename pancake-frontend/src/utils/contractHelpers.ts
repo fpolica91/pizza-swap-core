@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import Web3 from 'web3'
 import { AbiItem } from 'web3-utils'
 import web3NoAccount from 'utils/web3'
@@ -73,7 +74,7 @@ const getContract = (abi: any, address: string, web3?: Web3, account?: string) =
 }
 
 export const getBep20Contract = (address: string, web3?: Web3) => {
-  return getContract(bep20Abi, address, web3)
+  return getContract(bep20Abi as any, address, web3)
 }
 export const getErc721Contract = (address: string, web3?: Web3) => {
   return getContract(erc721Abi, address, web3)
